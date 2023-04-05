@@ -19,7 +19,7 @@ do {
   }
   } while (attempts < 10);
 
-main.innerHTML = `<h1>It took you ${attempts} attempts to guess correctly! The number was ${randomNumber}</h1>`;
+main.innerHTML = `<h1>${message}</h1>`;
 
 
 // TODO: Use a loop to create a number guessing game
