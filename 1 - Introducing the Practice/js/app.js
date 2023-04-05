@@ -1,16 +1,18 @@
 const main = document.querySelector('main');
 const randomNumber = getRandomNumber(10);
 let guess;
+let attempts = 0;
 
 function getRandomNumber(upper) {
   return Math.floor( Math.random() * upper ) + 1;
 }
 
 do {
-  guess = prompt('Guess a number betweeen 1 and 10.')
+  guess = prompt('Guess a number betweeen 1 and 10.');
+  attempts++;
   } while (parseInt(guess) !== randomNumber);
 
-main.innerHTML = `<h1>You guessed correct!The number was ${randomNumber}</h1>`;
+main.innerHTML = `<h1>It took you ${attempts} attempts to guess correctly!The number was ${randomNumber}</h1>`;
 
 
 // TODO: Use a loop to create a number guessing game
