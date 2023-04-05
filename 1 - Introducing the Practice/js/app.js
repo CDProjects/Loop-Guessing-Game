@@ -10,9 +10,16 @@ function getRandomNumber(upper) {
 do {
   guess = prompt('Guess a number betweeen 1 and 10.');
   attempts++;
-  } while (parseInt(guess) !== randomNumber);
 
-main.innerHTML = `<h1>It took you ${attempts} attempts to guess correctly!The number was ${randomNumber}</h1>`;
+  if (parseInt(guess) === randomNumber) {
+    message = `It took you ${attempts} attempts to guess correctly! The number was ${randomNumber}`
+    break;
+  } else {
+    message = `You did not guess the number. It was ${randomNumber}.`
+  }
+  } while (attempts < 10);
+
+main.innerHTML = `<h1>It took you ${attempts} attempts to guess correctly! The number was ${randomNumber}</h1>`;
 
 
 // TODO: Use a loop to create a number guessing game
